@@ -2,7 +2,8 @@
   "KSA": {
     "En": {
       "name": "KSA",
-      "prices": ["15 SAR/month","25 SAR/month","60 SAR/month"]
+      "prices": ["15 SAR/month","25 SAR/month","60 SAR/month"],
+      "videoQuality": ["HD", "Full HD", "4K UHD"]
     },
     "Ar": {
       "name": "السعودية",
@@ -12,7 +13,8 @@
   "Kuwait": {
     "En": {
       "name": "Kuwait",
-      "prices": ["1.2 KWD/month","2.5 KWD/month","4.8 KWD/month"]
+      "prices": ["1.2 KWD/month","2.5 KWD/month","4.8 KWD/month"],
+      "videoQuality": ["HD", "Full HD", "4K UHD"]
     },
     "Ar": {
       "name": "الكويت",
@@ -22,7 +24,8 @@
   "Bahrain": {
     "En": {
       "name": "Bahrain",
-      "prices": ["2 BHD/month", "3 BHD/month","6 BHD/month"]
+      "prices": ["2 BHD/month", "3 BHD/month","6 BHD/month"],
+      "videoQuality": ["HD", "Full HD", "4K UHD"]
     },
     "Ar": {
       "name": "البحرين",

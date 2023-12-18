@@ -1,13 +1,12 @@
 Feature: Plans and Price Feature
-  In order to view my subscription options for KSA Market
-  As a new customer from Bahrain
+  In order to view my subscription options for specific Market
+  As a new customer
   I want to check all the plan names in arabic and english and their relative price
 
-  Scenario Outline: check price and currency in  english
+  Scenario Outline: check price and currency
 
-    Given I Navigate to STC TV Website
-    When  I Select <market>
-    And   I Change <language>
+    Given I Select <market>
+    When   I Change <language>
     Then  I Should see lite plan name and price in my currency and selected language
     And   I Should see Classic plan name and price in my currency and selected language
     And   I Should see permium name and price in my currency and selected language
@@ -16,3 +15,7 @@ Feature: Plans and Price Feature
       | market | language  |
       | "Bahrain" | "English" |
       | "Bahrain" | "Arabic" |
+      | "KSA"   | "English" |
+      | "KSA"   | "Arabic" |
+      | "Kuwait"   | "English" |
+      | "Kuwait"   | "Arabic" |

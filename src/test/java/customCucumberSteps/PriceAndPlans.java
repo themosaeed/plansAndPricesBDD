@@ -21,13 +21,10 @@ public class PriceAndPlans {
     public void init(){
         driver = new SHAFT.GUI.WebDriver();
         subscriptionPage = new SubscriptionPage(driver);
-    }
-
-
-    @Given("I Navigate to STC TV Website")
-    public void navigateToSubPage(){
         subscriptionPage.openPortal();
     }
+
+
 
     @When("I Select {string}")
     public void selectMarket(String market){

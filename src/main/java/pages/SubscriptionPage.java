@@ -24,6 +24,7 @@ public class SubscriptionPage {
     public static By changeLanguageButton() {
         return By.id("translation-btn");
     }
+    public static By redeemCodeButton(){return By.xpath("//button[text()=\"Click here\"]");}
 
 
     public static By selectCountry(String country){
@@ -104,6 +105,16 @@ public class SubscriptionPage {
         return planName;
     }
 
+    public static By LITEPLANVideoQuality(){
+       return By.xpath("//div[text()=\"HD\"]");
+    }
+    public static By ClassicPLANVideoQuality(){
+        return By.xpath("//div[text()=\"Full HD\"]");
+    }
+    public static By PremiumPLANVideoQuality(){
+        return By.xpath("//div[text()=\"4K UHD\"]");
+    }
+
 
 
     public SubscriptionPage openPortal(){
@@ -162,6 +173,11 @@ public class SubscriptionPage {
         return currentLang;
     }
 
+    public RedeemGiftPage moveToRedeemGiftPage(){
+        driver.element().click(redeemCodeButton());
+        return new RedeemGiftPage(driver);
+    }
+
     public String ExpectedCountryLitePlanPrice(){
         testData = new SHAFT.TestData.JSON("testData.json");
         String LitePrice = testData.getTestData(currentCountry+".En.prices[0]");
@@ -203,6 +219,22 @@ public class SubscriptionPage {
         }
 
         return premiumPrice;
+    }
+
+    public String ExpectedCountryLitePlanVideoQuality(){
+        testData = new SHAFT.TestData.JSON("testData.json");
+        String liteQuality = testData.getTestData(currentCountry+".En.videoQuality[0]");
+        return liteQuality;
+    }
+    public String ExpectedCountryClassicPlanVideoQuality(){
+        testData = new SHAFT.TestData.JSON("testData.json");
+        String classicQuality = testData.getTestData(currentCountry+".En.videoQuality[1]");
+        return classicQuality;
+    }
+    public String ExpectedCountryPremiumPlanVideoQuality(){
+        testData = new SHAFT.TestData.JSON("testData.json");
+        String premiumQuality = testData.getTestData(currentCountry+".En.videoQuality[2]");
+        return premiumQuality;
     }
 
 
