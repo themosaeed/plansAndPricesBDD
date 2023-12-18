@@ -17,3 +17,5 @@ by default project runs on Google Chrome . if you want it to run on a different 
 by default project runs in headless mode. this can be changed in the config files.
 
 by default there is 3 reports generated after execution. it is configured to take screenshots only for validations and gif and video options are disabled but can be triggered from configurations.
+
+![alt text](Screenshot 2023-12-19 003818.png)
