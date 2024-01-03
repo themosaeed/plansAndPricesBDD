@@ -24,13 +24,13 @@ public class VideoQuality {
     @And("I Should see Classic video Quality")
     public void validateClassicPlanVideoQuality(){
         String expectedQuality = Hooks.subscriptionPage.ExpectedCountryClassicPlanVideoQuality();
-        Hooks.driver.assertThat().element(SubscriptionPage.ClassicPLANVideoQuality()).text().isEqualTo(expectedQuality);
+        Hooks.driver.assertThat().element(SubscriptionPage.ClassicPLANVideoQuality()).text().isEqualTo(expectedQuality).perform();
     }
 
     @And("I Should see permium video Quality")
     public void validatePremiumPlanVideoQuality(){
         String expectedQuality = Hooks.subscriptionPage.ExpectedCountryPremiumPlanVideoQuality();
-        Hooks.driver.assertThat().element(SubscriptionPage.PremiumPLANVideoQuality()).text().isEqualTo(expectedQuality);
+        Hooks.driver.assertThat().element(SubscriptionPage.PremiumPLANVideoQuality()).text().isEqualTo(expectedQuality).perform();
     }
 
 }

@@ -11,8 +11,8 @@ clone the repo and run the following command
 by default project runs on Google Chrome . if you want it to run on a different browser use the follwoing commands
 
 ```bash
-  mvn clean test -DtargetBrowserName = firefox
-  mvn clean test -DtargetBrowserName = MicrosoftEdge
+  mvn clean test -DtargetBrowserName=firefox
+  mvn clean test -DtargetBrowserName=MicrosoftEdge
 ```
 by default project runs in headless mode. this can be changed in the config files.
 
