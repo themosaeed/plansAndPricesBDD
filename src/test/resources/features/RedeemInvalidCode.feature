@@ -3,6 +3,7 @@ Feature: redeem gift code
   As a new customer trying to input invalid code
   I see error message that the code is wrong
 
+  @negative
   Scenario: check invalid redeem code
 
     Given I Change page to redeem code page
