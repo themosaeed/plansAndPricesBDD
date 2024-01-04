@@ -5,8 +5,8 @@ Feature: video Quality
 
   Scenario Outline: check video quality
 
-    Given I change <market>
-    When I Choose <language>
+    Given I Select <market>
+    When  I Change <language>
     Then  I Should see lite plan video Quality
     And   I Should see Classic video Quality
     And   I Should see permium video Quality

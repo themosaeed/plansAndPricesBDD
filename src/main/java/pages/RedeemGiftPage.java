@@ -11,7 +11,6 @@ public class RedeemGiftPage {
         this.driver = driver;
     }
 
-    private String currentCountry = "Bahrain";
 
     public static By redeemCodeInputField(){
         return By.name("username");

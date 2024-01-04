@@ -12,39 +12,15 @@ import org.testng.annotations.BeforeTest;
 import pages.SubscriptionPage;
 
 public class PriceAndPlans {
-    private SHAFT.GUI.WebDriver driver;
-    private SubscriptionPage subscriptionPage;
 
-
-
-    @Before
-    public void init(){
-        driver = new SHAFT.GUI.WebDriver();
-        subscriptionPage = new SubscriptionPage(driver);
-        subscriptionPage.openPortal();
-    }
-
-
-
-    @When("I Select {string}")
-    public void selectMarket(String market){
-        subscriptionPage.switchMarket(market);
-    }
-
-
-
-    @And("I Change {string}")
-    public void changeLanguage(String Language){
-        subscriptionPage.switchLanguage(Language);
-    }
 
     @Then("I Should see lite plan name and price in my currency and selected language")
     public void checkLitePlanNameAndPrice(){
-        String currentLanguage = subscriptionPage.getCurrentLanguage();
-        String ExpectedPrice = subscriptionPage.ExpectedCountryLitePlanPrice();
+        String currentLanguage = Hooks.subscriptionPage.getCurrentLanguage();
+        String ExpectedPrice = Hooks.subscriptionPage.ExpectedCountryLitePlanPrice();
 
-        driver.assertThat().element(SubscriptionPage.LITEPLANName(currentLanguage)).exists().perform();
-        driver
+        Hooks.driver.assertThat().element(SubscriptionPage.LITEPLANName(currentLanguage)).exists().perform();
+        Hooks.driver
                 .assertThat()
                 .element(SubscriptionPage.LITEPLANPrice(currentLanguage)).text()
                 .isEqualTo(ExpectedPrice)
@@ -54,11 +30,11 @@ public class PriceAndPlans {
 
     @And("I Should see Classic plan name and price in my currency and selected language")
     public void checkClassicPlanNameAndPrice(){
-        String currentLanguage = subscriptionPage.getCurrentLanguage();
-        String ExpectedPrice = subscriptionPage.ExpectedCountryClassicPlanPrice();
+        String currentLanguage = Hooks.subscriptionPage.getCurrentLanguage();
+        String ExpectedPrice = Hooks.subscriptionPage.ExpectedCountryClassicPlanPrice();
 
-        driver.assertThat().element(SubscriptionPage.CLASSICPLANName(currentLanguage)).exists().perform();
-        driver
+        Hooks.driver.assertThat().element(SubscriptionPage.CLASSICPLANName(currentLanguage)).exists().perform();
+        Hooks.driver
                 .assertThat()
                 .element(SubscriptionPage.CLASSICPlanPrice(currentLanguage)).text()
                 .isEqualTo(ExpectedPrice)
@@ -68,12 +44,12 @@ public class PriceAndPlans {
 
     @And("I Should see permium name and price in my currency and selected language")
     public void checkPremiumPlanNameAndPrice(){
-        String currentLanguage = subscriptionPage.getCurrentLanguage();
-        String ExpectedPrice = subscriptionPage.ExpectedCountryPremiumPlanPrice();
+        String currentLanguage = Hooks.subscriptionPage.getCurrentLanguage();
+        String ExpectedPrice = Hooks.subscriptionPage.ExpectedCountryPremiumPlanPrice();
 
-        driver.assertThat().element(SubscriptionPage.PREMIUMPLANName(currentLanguage)).exists().perform();
+        Hooks.driver.assertThat().element(SubscriptionPage.PREMIUMPLANName(currentLanguage)).exists().perform();
 
-        driver
+        Hooks.driver
                 .assertThat()
                 .element(SubscriptionPage.PREMIUMPlanPrice(currentLanguage)).text()
                 .isEqualTo(ExpectedPrice)
@@ -81,9 +57,5 @@ public class PriceAndPlans {
 
     }
 
-    @After
-    public void teardown() {
-        driver.quit();
-    }
 
 }
